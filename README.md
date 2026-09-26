@@ -100,6 +100,21 @@ For more info on custom colors [click here](./colorschemes/COLORS.md)
 
 ---
 
+## Jellyfin 12+ compatibility
+
+Jellyfin 12 removed the per-type CSS hooks (`.writersGroup`, `.studiosGroup`) from the
+item details page — every metadata row now shares one class, distinguished only by
+its (translated) label text. Everything else in this theme still applies as-is; the
+only visible effect is that the Writers and Studios rows, which this theme hides by
+default, will show again.
+
+To restore that on 12.0+, install `jf12-compat.js` via the
+[JavaScript Injector](https://github.com/n00bcodr/Jellyfin-JavaScript-Injector) plugin
+(paste its contents in as a new custom script). It re-tags those rows client-side so
+the existing `.writersGroup` / `.studiosGroup` CSS rules keep working unmodified.
+
+---
+
 ## Tweaks
 
 There are a few of tweaks you can add, any of the following are optional:
